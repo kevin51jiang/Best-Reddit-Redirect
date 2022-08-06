@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "i.reddit.com" }
+      }
+    },
+    "condition": {
+      "urlFilter": "||reddit.com",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "old.reddit.com" }
+      }
+    },
+    "condition": {
+      "urlFilter": "||reddit.com",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "new.reddit.com" }
+      }
+    },
+    "condition": {
+      "urlFilter": "||reddit.com",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
