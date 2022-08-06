@@ -1,13 +1,13 @@
 try {
   // Where we will expose all the data we retrieve from storage.sync.
-  const storageCache = { redirectTo: "old" };
+  const storageCache = { redirectTo: "i" };
   // Asynchronously retrieve data from storage.sync, then cache it.
   const initStorageCache = getAllStorageSyncData().then((items) => {
     // Copy the data retrieved from storage into storageCache.
     Object.assign(storageCache, items);
   });
 
-  chrome.action.onClicked.addListener(async () => {
+  const handleRedirectChange = async () => {
     try {
       await initStorageCache;
       const { redirectTo } = storageCache;
@@ -48,7 +48,10 @@ try {
       // Handle error that occurred during storage initialization.
       console.error(e);
     }
-  });
+  };
+
+  chrome.runtime.onInstalled.addListener(handleRedirectChange);
+  chrome.action.onClicked.addListener(handleRedirectChange);
 
   // Reads all data out of storage.sync and exposes it via a promise.
   //

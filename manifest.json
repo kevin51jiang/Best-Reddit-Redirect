@@ -2,7 +2,7 @@
   "name": "Best Reddit Redirect",
   "description": "Only Reddit redirect extension you need. Easily toggle between old, new and i Reddit. Try it today!",
   "manifest_version": 3,
-  "version": "0.2",
+  "version": "0.3",
   "permissions": [
     "declarativeNetRequest",
     "storage"
